@@ -1,15 +1,13 @@
 
 import ArticuloHombres from "./ArticuloHombres";
-
+import TituloPrincipalArticulo from "./TituloPrincipalArticulo";
 
 function MuestraArticulos() {
     return (
         <div>
 
             {/* <!-- Title --> */}
-            <div className="pt-32">
-                <h1 className="text-center text-2xl font-bold text-gray-800 underline">Camisas</h1>
-            </div>
+            <TituloPrincipalArticulo />
 
             {/* <!-- Tab Menu --> */}
             <div className="flex flex-wrap items-center  overflow-x-auto overflow-y-hidden py-10 justify-center text-gray-800">
