@@ -4,7 +4,7 @@ function ImagenMujer() {
     return (
         <Link to="/mujeres" className="group">
             <img
-                className="w-[850px] h-screen object-cover object-top sm:object-cover"
+                className="w-[50vw] h-screen object-cover object-top sm:object-cover"
                 src="https://github.com/PaniSoto/proyectoFinalCliente/blob/main/src/assets/imagenes/Mujer.jpg?raw=true"
                 alt="Enlace a la ropa de mujer"
             />

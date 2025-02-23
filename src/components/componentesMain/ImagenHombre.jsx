@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 
 function ImagenHombre() {
     return (
-
         <Link to="/hombres" className="group">
             <img
-                className="w-[850px] h-screen object-cover object-top"
+                className="w-[50vw] h-screen object-cover object-top"
                 src="https://github.com/PaniSoto/proyectoFinalCliente/blob/main/src/assets/imagenes/Hombre.jpg?raw=true"
                 alt="Enlace a la ropa de hombre"
             />

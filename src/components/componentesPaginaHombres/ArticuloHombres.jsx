@@ -5,10 +5,10 @@ import Favoritos from "./Favoritos";
 
 function ArticuloHombres() {
     return (
-        <article className="rounded-xl bg-whiteshadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 relative">
+        <article className="rounded-xl bg-whiteshadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 relative m-auto">
             <a href="#">
                 <div className="relative flex items-end overflow-hidden rounded-xl group h-full">
-                    <img className="aspect-[10/15] object-cover" src="https://www.dariobeltran.com/12255-large_default/camisa-algodon-hombre-azul.jpg" alt="Product Photo" />
+                    <img className="aspect-[9/16] object-cover" src="https://www.dariobeltran.com/12255-large_default/camisa-algodon-hombre-azul.jpg" alt="Product Photo" />
 
                     <div className="absolute bottom-0 left-0 right-0 bg-white p-4 transition-transform duration-300 
     opacity-90 translate-y-0 group-hover:translate-y-0 group-hover:opacity-90 md:translate-y-full md:opacity-0">
