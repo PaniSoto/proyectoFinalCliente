@@ -1,7 +1,6 @@
 import ImagenHombre from "./ImagenHombre";
 import ImagenMujer from "./ImagenMujer";
 
-
 function SeccionHombreMujer() {
     return (
         <div>

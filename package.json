@@ -14,6 +14,7 @@
     "framer-motion": "^12.4.7",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
+    "react-awesome-button": "^7.0.5",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.29.0",
     "react-slick": "^0.30.3",
@@ -22,6 +23,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
+    "@swc/core": "^1.10.18",
+    "@swc/wasm": "^1.10.18",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react-swc": "^3.5.0",
