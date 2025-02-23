@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 function ImagenMujer() {
     return (
         <Link to="/mujeres" className="group">
-            <img
-                className="w-[50vw] h-screen object-cover object-top sm:object-cover"
-                src="https://github.com/PaniSoto/proyectoFinalCliente/blob/main/src/assets/imagenes/Mujer.jpg?raw=true"
-                alt="Enlace a la ropa de mujer"
-            />
-            <h1 className="absolute right-70 top-85 transform -translate-y-1/2 text-white text-3xl transition-transform duration-300 scale-0 group-hover:scale-110 underline">
-                Mujeres
-            </h1>
+            <div className="relative w-[50vw] h-screen">
+                <img
+                    className="w-full h-full object-cover object-top"
+                    src="https://github.com/PaniSoto/proyectoFinalCliente/blob/main/src/assets/imagenes/Mujer.jpg?raw=true"
+                    alt="Enlace a la ropa de mujer"
+                />
+
+                <h2 className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl transition-transform duration-300 scale-0 group-hover:scale-110 underline">
+                    Mujeres
+                </h2>
+            </div>
         </Link>
     );
 }

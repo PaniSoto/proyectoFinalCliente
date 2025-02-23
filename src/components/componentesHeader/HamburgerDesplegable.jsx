@@ -14,7 +14,6 @@ function HamburgerDesplegable() {
         onMouseLeave={() => setIsHovered(false)}
       >
         <Menu className="hover:scale-110 transition duration-200 text-black" onClick={() => setIsHovered(!isHovered)}/>
-          
       </div>
 
       {/* Sidebar Desplegable */}
