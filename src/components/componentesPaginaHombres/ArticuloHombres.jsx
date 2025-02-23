@@ -1,8 +1,6 @@
 import { ShoppingBag } from "lucide-react";
 import Favoritos from "./Favoritos";
 
-
-
 function ArticuloHombres() {
     return (
         <article className="rounded-xl bg-whiteshadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 relative m-auto">
