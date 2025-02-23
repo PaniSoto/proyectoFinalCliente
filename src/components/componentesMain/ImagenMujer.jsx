@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function ImagenMujer() {
     return (
-        <Link href="/mujeres" className="group">
+        <Link to="/mujeres" className="group">
             <img
                 className="w-[850px] h-[737px] object-cover object-top"
                 src="./src/assets/imagenes/Mujer.jpg"
