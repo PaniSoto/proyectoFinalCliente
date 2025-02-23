@@ -4,7 +4,7 @@ import ImagenMujer from "./ImagenMujer";
 function SeccionHombreMujer() {
     return (
         <div>
-            <div className="flex justify-between">
+            <div className="flex justify-between h-full">
                 <div>
                     <ImagenHombre />
                 </div>
