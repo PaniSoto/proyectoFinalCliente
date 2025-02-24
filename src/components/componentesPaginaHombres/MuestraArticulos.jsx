@@ -1,8 +1,19 @@
 
+import { useEffect, useState } from "react";
 import ArticuloHombres from "./ArticuloHombres";
 import TituloPrincipalArticulo from "./TituloPrincipalArticulo";
 
 function MuestraArticulos() {
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/productos?search&categoria=Camisas")
+            .then((response) => response.json())
+            .then((productosRecibidos) => setProductos(productosRecibidos));
+    }, []);
+
+    console.log(productos);
+
     return (
         <div>
 
@@ -42,7 +53,10 @@ function MuestraArticulos() {
             {/* <!-- Product List --> */}
             <section className="pb-20 pt-10 bg-gray-100">
                 <div className="mx-auto grid max-w-6xl  grid-cols-1 gap-5 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    <ArticuloHombres />
+                    {productos.map((producto) => (
+                        <ArticuloHombres key={producto._id} imagenProducto={producto.imagen} nombreProducto={producto.nombre} precioProducto={producto.precio} descuentoProducto={producto.descuento} />
+                    ))}
+                    {/* <ArticuloHombres /> */}
                 </div>
             </section>
         </div>
