@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/componentesMain/Home";
 import InicioHombres from "./components/componentesPaginaHombres/InicioHombres";
+import SidebarCarrito from "./components/componentesPaginaHombres/SidebarCarrito";
 
 
 
@@ -9,7 +10,7 @@ function Router() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/carrito" element={<h1>Carrito</h1>} />
+            {/* <Route path="/carrito" element={<SidebarCarrito />} /> */}
             <Route path="/login" element={<h1 className="text-black">Login</h1>} />
             <Route path="/hombres" element={<InicioHombres />} />
             {/* <Route path="*" element={

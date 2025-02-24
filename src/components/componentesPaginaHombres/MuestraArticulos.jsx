@@ -16,7 +16,6 @@ function MuestraArticulos() {
 
     return (
         <div>
-
             {/* <!-- Title --> */}
             <TituloPrincipalArticulo />
 

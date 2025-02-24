@@ -1,7 +1,7 @@
 import { ShoppingBag } from "lucide-react";
 import Favoritos from "./Favoritos";
 
-function ArticuloHombres({ imagenProducto,nombreProducto, precioProducto, descuentoProducto }) {
+function ArticuloHombres({ imagenProducto, nombreProducto, precioProducto, descuentoProducto }) {
     return (
         <article className="rounded-xl bg-whiteshadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 relative m-auto">
             <a href="#">
@@ -18,7 +18,7 @@ function ArticuloHombres({ imagenProducto,nombreProducto, precioProducto, descue
                                 <div className="transition-transform transform hover:scale-110">
                                     <ShoppingBag className="text-black" />
                                 </div>
-                               <Favoritos />
+                                <Favoritos />
                             </div>
                         </div>
                     </div>
