@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
-import { X } from 'lucide-react';
-
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from "@headlessui/react";
+import { X } from "lucide-react";
 
 const products = [
     {
@@ -27,35 +25,32 @@ const products = [
         imageAlt:
             'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
     },
-    // More products...
 ]
 
-export default function SidebarCarrito() {
-    const [open, setOpen] = useState(true);
-
+export default function SidebarCarrito({ open, onClose }) {
     return (
-        <Dialog open={open} onClose={setOpen} className="fixed inset-0 z-50">
+        <Dialog open={open} onClose={onClose} className="absolute z-50">
             <DialogBackdrop
                 transition
-                className="fixed inset-0 bg-gray-500/75 transition-opacity duration-500 ease-in-out data-closed:opacity-0"
+                className="fixed inset-0 transition-opacity duration-500 ease-in-out data-closed:opacity-0"
             />
-
-            <div className="fixed inset-0 flex items-center justify-end">
-
+            <div className="fixed inset-0 flex items-center">
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full">
                         <DialogPanel
                             transition
                             className="pointer-events-auto w-screen h-screen sm:max-w-md sm:h-[calc(100vh-2rem)] transform transition duration-500 ease-in-out"
                         >
-                            <div className="flex flex-col bg-white shadow-xl rounded-lg h-full md:mt-4 md:mr-8 ">
-                                <div className="flex-1 overflow-y-auto p-6 sm:p-8">
+                            <div className="flex flex-col bg-white shadow-xl rounded-lg h-full md:mt-4 md:mr-5">
+                                <div className="flex flex-col overflow-y-auto p-6 sm:p-8">
                                     <div className="flex items-start justify-between">
-                                        <DialogTitle className="text-lg font-medium text-gray-900">Shopping cart</DialogTitle>
+                                        <DialogTitle className="text-lg font-medium text-gray-900">
+                                            Shopping cart
+                                        </DialogTitle>
                                         <div className="ml-3 flex h-7 items-center">
                                             <button
                                                 type="button"
-                                                onClick={() => setOpen(false)}
+                                                onClick={onClose}
                                                 className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
                                             >
                                                 <span className="absolute -inset-0.5" />
@@ -73,7 +68,6 @@ export default function SidebarCarrito() {
                                                         <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                             <img alt={product.imageAlt} src={product.imageSrc} className="size-full object-cover" />
                                                         </div>
-
                                                         <div className="ml-4 flex flex-1 flex-col">
                                                             <div>
                                                                 <div className="flex justify-between text-base font-medium text-gray-900">
@@ -86,7 +80,6 @@ export default function SidebarCarrito() {
                                                             </div>
                                                             <div className="flex flex-1 items-end justify-between text-sm">
                                                                 <p className="text-gray-500">Qty {product.quantity}</p>
-
                                                                 <div className="flex">
                                                                     <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500">
                                                                         Remove
@@ -120,7 +113,7 @@ export default function SidebarCarrito() {
                                             or{' '}
                                             <button
                                                 type="button"
-                                                onClick={() => setOpen(false)}
+                                                onClick={onClose}
                                                 className="font-medium text-indigo-600 hover:text-indigo-500"
                                             >
                                                 Continue Shopping
