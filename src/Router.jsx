@@ -10,8 +10,8 @@ function Router() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/login" element={<h1 className="text-black">Login</h1>} /> */}
             <Route path="/hombres" element={<InicioHombres />} />
+            {/* <Route path="/login" element={<SidebarCarrito />} /> */}
             {/* <Route path="*" element={
                 <div className="flex items-center justify-center h-screen">
                     <h1 className="text-black">Página no encontrada</h1>

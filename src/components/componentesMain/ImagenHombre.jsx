@@ -15,9 +15,6 @@ function ImagenHombre() {
                     Hombres
                 </h2>
             </div>
-
-
-
         </Link>
     );
 }
