@@ -9,16 +9,6 @@ export const CartProvider = ({ children }) => {
     );
     console.log(JSON.parse(localStorage.getItem("cart")))
 
-    // Cargar carrito desde localStorage al iniciar
-    // useEffect(() => {
-    //     const storedCart = localStorage.getItem("cart");
-    //     if (storedCart) {
-    //         setCart(JSON.parse(storedCart));
-    //         console.log("Carrito cargado desde localStorage");
-    //     }
-    //     console.log(cart);
-    // }, []);
-
     // Guardar carrito en localStorage cada vez que cambie
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
@@ -70,7 +60,7 @@ export const CartProvider = ({ children }) => {
     };
 
     const totalPrice = cart
-        .map(item => item.descuento !== undefined ? discountProduct(item._id) * item.quantity : item.precio * item.quantity)
+        .map(item => item.descuento !== undefined ? discountProduct(item) * item.quantity : item.precio * item.quantity)
         .reduce((acc, curr) => acc + curr, 0);
 
     return (

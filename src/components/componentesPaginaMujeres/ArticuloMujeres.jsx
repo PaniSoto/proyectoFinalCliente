@@ -3,7 +3,7 @@ import Favoritos from "./Favoritos";
 import { useCart } from "../Hook/useCart";
 import { discountProduct } from "../Hook/discountProduct";
 
-function ArticuloHombres({ producto }) {
+function ArticuloMujeres({ producto }) {
     const { addProduct, removeProduct, cart } = useCart();
 
     const checkProductInCart = () => {
@@ -45,4 +45,4 @@ function ArticuloHombres({ producto }) {
     );
 }
 
-export default ArticuloHombres;
+export default ArticuloMujeres;
