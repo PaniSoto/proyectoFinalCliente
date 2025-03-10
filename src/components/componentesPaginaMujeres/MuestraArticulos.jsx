@@ -4,6 +4,7 @@ import MenuSeleccionProducto from "./MenuSeleccionProducto";
 
 function MuestraArticulos() {
     const [productos, setProductos] = useState([]);
+    const [titulo, setTitulo] = useState("Todos nuestros productos");
 
     useEffect(() => {
         fetch("http://localhost:3000/api/productos?search&sexo=Mujer")
@@ -11,17 +12,18 @@ function MuestraArticulos() {
             .then((productosRecibidos) => setProductos(productosRecibidos));
     }, []);
 
-    const cargarProductos = (endpoint) => {
+    const cargarProductos = (endpoint, nuevoTitulo) => {
         fetch(endpoint)
             .then((response) => response.json())
             .then((productosRecibidos) => setProductos(productosRecibidos));
+        setTitulo(nuevoTitulo);
     };
 
     return (
         <div>
             {/* <!-- Title --> */}
             <div className="pt-28">
-                <h1 className="text-center text-2xl font-bold text-gray-800 underline">Todos nuestros productos</h1>
+                <h1 className="text-center text-2xl font-bold text-gray-800 underline">{titulo}</h1>
             </div>
 
             {/* <!-- Tab Menu --> */}
