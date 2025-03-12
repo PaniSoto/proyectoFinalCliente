@@ -36,17 +36,17 @@ const DatosArticulo = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full p-4 md:p-8 bg-gray-100 items-center justify-center">
       {/* Imagen principal */}
-      <div className="w-full md:w-5/12 p-4 flex justify-center items-center cursor-pointer ">
+      <div className="w-full md:w-5/12 p-4 flex justify-center items-center cursor-pointer md:pr-8">
         <img
           src={producto.imagen}
           alt="Artículo Principal"
-          className="aspect-[9/16] object-cover md:max-w-sm mb-4 mt-20 "
+          className="aspect-[9/16] object-cover md:max-w-sm mb-4 mt-4 md:mt-20"
         />
       </div>
 
       {/* Detalles del producto */}
-      <div className="w-full md:w-5/12 flex flex-col md:items-start">
-        <h2 className="font-bold mb-2 text-black text-2xl sm:text-4xl md:text-3xl">
+      <div className="w-full md:w-7/12 flex flex-col md:items-start p-4 md:p-0">
+        <h2 className="font-bold mb-2 text-black text-2xl sm:text-4xl md:text-3xl text-center md:text-left">
           {producto.nombre}
         </h2>
 
@@ -54,6 +54,7 @@ const DatosArticulo = () => {
           <span className="text-lg font-semibold text-slate-700">{discountProduct(producto)}€</span>
           <s className="inline-block text-red-500 text-sm font-semibold px-3 py-2 rounded">{producto.descuento}%</s>
         </div>
+
         <select className="w-full p-4 bg-white border border-gray-300 text-black rounded-lg mb-4 shadow-lg">
           {producto.tallas.split(",").map((talla) => (
             <option key={talla} value={talla}>

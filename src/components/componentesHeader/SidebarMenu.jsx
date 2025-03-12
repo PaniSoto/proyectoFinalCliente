@@ -27,7 +27,6 @@ function SidebarMenu() {
         className="fixed left-0 top-0 h-full w-94 bg-gray-100 text-white shadow-lg z-20 p-4 sm:w-96"
       >
         <X className="block md:hidden cursor-pointer text-black" onClick={() => setIsHovered(false)} />
-
         <h2 className="text-2xl font-bold mb-8 text-gray-900 border-b-2">Menú</h2>
         <ul className="space-y-2 text-gray-700 flex flex-col">
           <Link to="/" className="p-2 rounded-lg hover:bg-gray-500 bg-gray-300 text-black cursor-pointer">Inicio</Link>

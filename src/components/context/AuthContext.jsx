@@ -16,7 +16,6 @@ export const AuthProvider = ({ children }) => {
 
     if (savedUser) {
       setIsAuthenticated(true);
-      // console.log("Login exitoso");
     }
   });
 
@@ -27,13 +26,10 @@ export const AuthProvider = ({ children }) => {
       password: password,
     };
 
-    // console.log(userData);
-
     if (email === "1@1.es" && password === "1234") {
       setUser(userData);
       setIsAuthenticated(true);
       localStorage.setItem("user", userData); // Crear el item en el localStorage
-      // console.log("Login exitoso");
     }
   };
 

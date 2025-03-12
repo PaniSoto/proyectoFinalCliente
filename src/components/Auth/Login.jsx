@@ -10,7 +10,6 @@ export default function Login({ close }) {
     e.preventDefault();
 
     login(email, password),
-
       setEmail('');
     setPassword('');
 
@@ -27,7 +26,7 @@ export default function Login({ close }) {
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label className="block text-xl font-medium text-gray-700 mb-1">
-              Correo electronico
+              Correo electrónico
             </label>
             <input
               type="email"
@@ -50,8 +49,6 @@ export default function Login({ close }) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-
-
 
           <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-lg transition-colors">
             Iniciar sesión

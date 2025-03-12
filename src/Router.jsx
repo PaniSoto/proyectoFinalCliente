@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/componentesMain/Home";
 import InicioHombres from "./components/componentesPaginaHombres/InicioHombres";
 import InicioMujeres from "./components/componentesPaginaMujeres/InicioMujeres";
-import DatosArticulo from "./components/componentesPaginaHombres/DatosArticulo";
+import DatosArticulo from "./components/componentesCompartidosHombreMujer/DatosArticulo";
 
 function Router() {
     return (
@@ -12,10 +12,6 @@ function Router() {
             <Route path="/hombres" element={<InicioHombres />} />
             <Route path="/producto/:_id" element={<DatosArticulo />} />
             <Route path="/mujeres" element={<InicioMujeres />} />
-            {/* <Route path="/mujeres/vestidos" element={<VestidosMujeres />} /> */}
-            {/* <Route path="/mujeres/pantalones" element={<PantalonesMujeres />} /> */}
-            {/* <Route path="/mujeres/zapatos" element={<ZapatosMujeres />} /> */}
-            {/* <Route path="/mujeres/Accesorios" element={<AccesoriosMujeres />} /> */}
         </Routes>
     );
 }

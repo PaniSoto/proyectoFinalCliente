@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../Footer";
+import Footer from "../componentesCompartidosHombreMujer/Footer";
 import MuestraArticulos from "./MuestraArticulos"
 
 function InicioHombres() {
