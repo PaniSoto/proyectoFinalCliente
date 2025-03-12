@@ -7,7 +7,7 @@ function MuestraArticulos() {
     const [titulo, setTitulo] = useState("Todos nuestros productos");
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/productos?search&sexo=Hombre")
+        fetch("https://backend-del-proyecto-final-de-cliente.vercel.app/api/productos?search&sexo=Hombre")
             .then((response) => response.json())
             .then((productosRecibidos) => setProductos(productosRecibidos));
     }, []);

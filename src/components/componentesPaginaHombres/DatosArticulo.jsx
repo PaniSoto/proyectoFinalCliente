@@ -10,7 +10,7 @@ const DatosArticulo = () => {
   const { addProduct, removeProduct, cart } = useCart();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/productos/${_id}`)
+    fetch(`https://backend-del-proyecto-final-de-cliente.vercel.app/api/productos/${_id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Producto no encontrado");
