@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { discountProduct } from '../Hook/discountProduct';
+import { useCart } from '../Hook/useCart';
+import { ShoppingBag, Trash2 } from 'lucide-react';
 
 const DatosArticulo = () => {
-
   const { _id } = useParams();
-
   const [producto, setProducto] = useState(null);
+  const { addProduct, removeProduct, cart } = useCart();
 
   useEffect(() => {
-
-    
-
-    // Llamada a la API
     fetch(`http://localhost:3000/api/productos/${_id}`)
       .then((response) => {
         if (!response.ok) {
@@ -21,49 +19,75 @@ const DatosArticulo = () => {
       })
       .then((data) => {
         console.log("Producto recibido:", data);
-        setProducto(data);  // Guardamos el producto en el estado
-      })
+        setProducto(data);
+      });
   }, [_id]);
 
   if (!producto) {
     return <div>Cargando...</div>;
   }
 
+  const checkProductInCart = () => {
+    return cart.some((item) => item._id === producto._id);
+  };
+
+  const isProductInCart = checkProductInCart();
+
   return (
-    <div className="flex min-h-screen w-full p-8 bg-gray-100">
-      <div className="w-1/2 p-4 flex justify-center items-center">
+    <div className="flex flex-col md:flex-row min-h-screen w-full p-4 md:p-8 bg-gray-100 items-center justify-center">
+      {/* Imagen principal */}
+      <div className="w-full md:w-5/12 p-4 flex justify-center items-center cursor-pointer ">
         <img
-          src={producto.imagen} 
+          src={producto.imagen}
           alt="Artículo Principal"
-          className="w-full max-w-md mb-4"
+          className="aspect-[9/16] object-cover md:max-w-sm mb-4 mt-20 "
         />
-        {/* {console.log("Imagen del producto:", producto[0].imagen)} */}
       </div>
-      <div className="w-1/2 p-8 bg-white flex flex-col justify-center">
-        <h1 className="text-2xl font-bold mb-2">{producto.nombre}</h1>
-        <p className="text-lg text-gray-700 mb-4">{producto.precio} €</p>
-        <img
-          src="icono_tacón.jpg"
-          alt="Icono Tacón"
-          className="mb-4"
-        />
-        <div className="mb-4">
-          <label className="block text-gray-700">Talla:</label>
-          <select className="w-full p-2 border border-gray-300 rounded">
-            <option>36</option>
-            <option>37</option>
-            <option>38</option>
-            <option>39</option>
-            <option>40</option>
-            <option>41</option>
-          </select>
+
+      {/* Detalles del producto */}
+      <div className="w-full md:w-5/12 flex flex-col md:items-start">
+        <h2 className="font-bold mb-2 text-black text-2xl sm:text-4xl md:text-3xl">
+          {producto.nombre}
+        </h2>
+
+        <div className="flex items-center md:justify-start mb-4">
+          <span className="text-lg font-semibold text-slate-700">{discountProduct(producto)}€</span>
+          <s className="inline-block text-red-500 text-sm font-semibold px-3 py-2 rounded">{producto.descuento}%</s>
         </div>
-        <button className="w-full p-3 bg-green-500 text-white rounded mb-4">
-          Añadir a mi cesta
-        </button>
-        <p className="text-gray-600 mb-2">Ref {producto.referencia}</p>
-        <p className="text-gray-600 mb-2">{producto.descripcion}</p>
-        <p className="text-gray-600">Altura del tacón: {producto.alturaTacón} cm</p>
+        <select className="w-full p-4 bg-white border border-gray-300 text-black rounded-lg mb-4 shadow-lg">
+          {producto.tallas.split(",").map((talla) => (
+            <option key={talla} value={talla}>
+              {talla}
+            </option>
+          ))}
+        </select>
+
+        {/* Botón añadir */}
+        <div className="flex items-center justify-center w-full transition-transform transform hover:scale-105">
+          {!isProductInCart ? (
+            <div
+              className="flex items-center justify-center bg-gray-300 rounded-lg px-6 py-2 text-black cursor-pointer w-full"
+              onClick={() => addProduct(producto)}
+            >
+              <ShoppingBag className="mr-2" />
+              Añadir al carrito
+            </div>
+          ) : (
+            <div
+              className="flex items-center justify-center bg-gray-300 rounded-lg px-6 py-2 text-black cursor-pointer w-full"
+              onClick={() => removeProduct(producto._id)}
+            >
+              <Trash2 className="mr-2" />
+              Quitar del carrito
+            </div>
+          )}
+        </div>
+
+        {/* Línea divisora */}
+        <hr className="w-full border-t border-gray-300 my-4" />
+
+        {/* Información extra */}
+        <p className="text-gray-600 mb-2 text-center md:text-left">{producto.descripcion}</p>
       </div>
     </div>
   );
