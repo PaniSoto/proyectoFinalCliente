@@ -10,10 +10,8 @@ export default function SidebarCarrito({ open, onClose }) {
 
     const handleClick = () => {
         if (isAuthenticated) {
-            // Acción cuando el usuario está autenticado (ejemplo: mostrar un mensaje o redirigir)
             console.log("Ya estás autenticado");
         } else {
-            // Mostrar el componente Login si no está autenticado
             onClose();
             setIsLoginOpen(true);
         }
