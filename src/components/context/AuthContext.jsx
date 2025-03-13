@@ -25,8 +25,7 @@ export const AuthProvider = ({ children }) => {
       password: password,
     };
 
-    if (email === "1@1.es" && password === "1234",
-      email === "2@2.es" && password === "1234"
+    if (email === "1@1.es" && password === "1234"
     ) {
       setUser(userData);
       setIsAuthenticated(true);
