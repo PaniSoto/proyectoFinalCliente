@@ -35,11 +35,11 @@ const DatosArticulo = () => {
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full p-4 md:p-8 bg-gray-100 items-center justify-center">
-      <div className="w-full md:w-5/12 p-4 flex justify-center items-center cursor-pointer md:pr-8">
+      <div className="w-full md:w-5/12 p-4 flex justify-center items-center md:pr-8">
         <img
           src={producto.imagen}
           alt="Artículo Principal"
-          className="aspect-[9/16] object-cover md:max-w-sm mb-4 mt-4 md:mt-20"
+          className="aspect-[9/16] object-cover md:max-w-sm mb-4 mt-4 md:mt-20 cursor-pointer"
         />
       </div>
 

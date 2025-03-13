@@ -20,7 +20,7 @@ export default function Login({ close }) {
     <div className="flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-10">
         <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-          Inicia sesión
+          Iniciar sesión
         </h2>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
