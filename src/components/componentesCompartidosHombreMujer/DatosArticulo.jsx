@@ -43,6 +43,7 @@ const DatosArticulo = () => {
         />
       </div>
 
+      {/* Detalles del producto */}
       <div className="w-full md:w-7/12 flex flex-col md:items-start p-4 md:p-0">
         <h2 className="font-bold mb-2 text-black text-2xl sm:text-4xl md:text-3xl text-center md:text-left">
           {producto.nombre}
@@ -61,6 +62,7 @@ const DatosArticulo = () => {
           ))}
         </select>
 
+        {/* Botón añadir */}
         <div className="flex items-center justify-center w-full transition-transform transform hover:scale-105">
           {!isProductInCart ? (
             <div
@@ -81,8 +83,10 @@ const DatosArticulo = () => {
           )}
         </div>
 
+        {/* Línea divisora */}
         <hr className="w-full border-t border-gray-300 my-4" />
 
+        {/* Información extra */}
         <p className="text-gray-600 mb-2 text-center md:text-left">{producto.descripcion}</p>
       </div>
     </div>

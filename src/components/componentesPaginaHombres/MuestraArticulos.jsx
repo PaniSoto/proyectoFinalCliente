@@ -28,10 +28,12 @@ function MuestraArticulos() {
 
     return (
         <div>
+            {/* Título dinámico */}
             <div className="pt-28">
                 <h1 className="text-center text-2xl font-bold text-gray-800 underline">{titulo}</h1>
             </div>
 
+            {/* Campo de búsqueda mejorado */}
             <div className="text-center pt-4">
                 <input
                     type="text"
@@ -42,8 +44,10 @@ function MuestraArticulos() {
                 />
             </div>
 
+            {/* Menú de selección */}
             <MenuSeleccionProducto cargarProductos={cargarProductos} />
 
+            {/* Lista de productos */}
             <section className="pb-20 pt-10 bg-gray-100">
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-5 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {productos.map((producto) => (
