@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
     );
     // console.log(JSON.parse(localStorage.getItem("cart")))
 
-    // Guardar carrito en localStorage cada vez que cambie
+    // Guarda el carrito en localStorage cada vez que cambie
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
         console.log("Carrito guardado en localStorage");
@@ -36,7 +36,7 @@ export const CartProvider = ({ children }) => {
 
     const clearCart = () => {
         setCart([]);
-        localStorage.removeItem("cart"); // También lo borra del localStorage
+        localStorage.removeItem("cart");
     };
 
     const increaseQuantity = (productId) => {

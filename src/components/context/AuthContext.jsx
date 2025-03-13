@@ -5,13 +5,12 @@ const AuthContext = createContext();
 
 // Crear el proveedor del contexto
 export const AuthProvider = ({ children }) => {
-  // Estado para saber si el usuario está autenticado
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   useEffect(() => {
-    // Aquí puedes verificar la autenticación, por ejemplo, usando cookies o localStorage
+    // Aquí puedes verificar la autenticación del usuario
     const savedUser = localStorage.getItem("user");
 
     if (savedUser) {
@@ -47,7 +46,6 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Crear un hook para usar el contexto
 export const useAuth = () => {
   return useContext(AuthContext);
 };
