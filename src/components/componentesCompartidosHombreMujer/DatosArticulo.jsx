@@ -9,8 +9,6 @@ const DatosArticulo = () => {
   const [producto, setProducto] = useState(null);
   const { addProduct, removeProduct, cart } = useCart();
 
-  const isProductInCart = checkProductInCart();
-
   useEffect(() => {
     fetch(`https://backend-del-proyecto-final-de-cliente.vercel.app/api/productos/${_id}`)
       .then((response) => {
@@ -33,8 +31,11 @@ const DatosArticulo = () => {
     return cart.some((item) => item._id === producto._id);
   };
 
+  const isProductInCart = checkProductInCart();
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full p-4 md:p-8 bg-gray-100 items-center justify-center">
+      {/* Imagen principal */}
       <div className="w-full md:w-5/12 p-4 flex justify-center items-center cursor-pointer md:pr-8">
         <img
           src={producto.imagen}
