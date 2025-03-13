@@ -12,7 +12,6 @@ function Router() {
             <Route path="/hombres" element={<InicioHombres />} />
             <Route path="/mujeres" element={<InicioMujeres />} />
             <Route path="/producto/:_id" element={<DatosArticulo />} />
-            <Route path="/*" element={<h1>Pagina no encontrada</h1>} />
         </Routes>
     );
 }
