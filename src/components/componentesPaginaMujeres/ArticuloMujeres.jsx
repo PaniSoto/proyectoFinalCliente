@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 
 function ArticuloMujeres({ producto }) {
     const { addProduct, removeProduct, cart } = useCart();
+    const isProductInCart = checkProductInCart();
 
     const checkProductInCart = () => {
         return cart.some((item) => item._id === producto._id);
     };
-
-    const isProductInCart = checkProductInCart();
 
     return (
         <article className="rounded-xl bg-whiteshadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 relative m-auto">

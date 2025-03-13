@@ -7,7 +7,7 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(
         localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
     );
-    console.log(JSON.parse(localStorage.getItem("cart")))
+    // console.log(JSON.parse(localStorage.getItem("cart")))
 
     // Guardar carrito en localStorage cada vez que cambie
     useEffect(() => {

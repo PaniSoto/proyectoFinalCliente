@@ -8,7 +8,6 @@ function SidebarMenu() {
 
   return (
     <div className="relative" onClick={() => setIsHovered(!isHovered)}>
-      {/* Ícono del menú que activa el sidebar al pasar el cursor */}
       <div
         className="flex justify-start ml-3 m-6 cursor-pointer md:ml-8"
         onMouseEnter={() => setIsHovered(true)}
@@ -17,7 +16,6 @@ function SidebarMenu() {
         <Menu className="hover:scale-110 transition duration-200 text-black" onClick={() => setIsHovered(!isHovered)} />
       </div>
 
-      {/* Sidebar Desplegable */}
       <motion.div
         initial={{ x: -420, opacity: 0 }}
         animate={{ x: isHovered ? 0 : -420, opacity: isHovered ? 1 : 0 }}
@@ -32,7 +30,6 @@ function SidebarMenu() {
           <Link to="/" className="p-2 rounded-lg hover:bg-gray-500 bg-gray-300 text-black cursor-pointer">Inicio</Link>
         </ul>
 
-        {/* Categorías */}
         <div className="mt-6">
           <h3 className="text-lg font-semibold text-gray-800 border-b pb-2 mb-2">Hombres</h3>
           <ul className="grid grid-cols-2 gap-2 bg-gray-100 text-gray-700">

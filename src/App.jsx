@@ -5,8 +5,6 @@ import Router from './Router'
 import Layout from './Layout'
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <BrowserRouter>
       <Layout>
@@ -14,7 +12,6 @@ function App() {
       </Layout>
     </BrowserRouter>
   )
-  
 }
 
 export default App

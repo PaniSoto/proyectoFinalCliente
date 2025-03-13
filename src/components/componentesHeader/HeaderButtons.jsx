@@ -14,7 +14,6 @@ export default function HeaderButtons() {
       </div>
       <LoginButton />
 
-      {/* SidebarCarrito */}
       <SidebarCarrito open={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </div>
   );

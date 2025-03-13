@@ -9,6 +9,8 @@ const DatosArticulo = () => {
   const [producto, setProducto] = useState(null);
   const { addProduct, removeProduct, cart } = useCart();
 
+  const isProductInCart = checkProductInCart();
+
   useEffect(() => {
     fetch(`https://backend-del-proyecto-final-de-cliente.vercel.app/api/productos/${_id}`)
       .then((response) => {
@@ -18,7 +20,7 @@ const DatosArticulo = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("Producto recibido:", data);
+        // console.log("Producto recibido:", data);
         setProducto(data);
       });
   }, [_id]);
@@ -31,11 +33,8 @@ const DatosArticulo = () => {
     return cart.some((item) => item._id === producto._id);
   };
 
-  const isProductInCart = checkProductInCart();
-
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full p-4 md:p-8 bg-gray-100 items-center justify-center">
-      {/* Imagen principal */}
       <div className="w-full md:w-5/12 p-4 flex justify-center items-center cursor-pointer md:pr-8">
         <img
           src={producto.imagen}
@@ -44,7 +43,6 @@ const DatosArticulo = () => {
         />
       </div>
 
-      {/* Detalles del producto */}
       <div className="w-full md:w-7/12 flex flex-col md:items-start p-4 md:p-0">
         <h2 className="font-bold mb-2 text-black text-2xl sm:text-4xl md:text-3xl text-center md:text-left">
           {producto.nombre}
@@ -63,7 +61,6 @@ const DatosArticulo = () => {
           ))}
         </select>
 
-        {/* Botón añadir */}
         <div className="flex items-center justify-center w-full transition-transform transform hover:scale-105">
           {!isProductInCart ? (
             <div
@@ -84,10 +81,8 @@ const DatosArticulo = () => {
           )}
         </div>
 
-        {/* Línea divisora */}
         <hr className="w-full border-t border-gray-300 my-4" />
 
-        {/* Información extra */}
         <p className="text-gray-600 mb-2 text-center md:text-left">{producto.descripcion}</p>
       </div>
     </div>
