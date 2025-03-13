@@ -76,8 +76,8 @@ export default function SidebarCarrito({ open, onClose }) {
                                                                     +
                                                                 </button>
                                                                 <div className="flex">
-                                                                    <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500" onClick={() => removeProduct(product._id)} >
-                                                                        <Trash2 className="text-white" />
+                                                                    <button type="button" className="font-medium" onClick={() => removeProduct(product._id)} >
+                                                                        <Trash2 className="text-red-500 hover:text-red-400" />
                                                                     </button>
                                                                 </div>
                                                             </div>
@@ -98,23 +98,23 @@ export default function SidebarCarrito({ open, onClose }) {
                                     <div className="mt-6">
                                         <a
                                             onClick={handleClick}
-                                            className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700"
+                                            className="flex items-center justify-center rounded-md border border-transparent bg-green-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-green-700"
                                         >
                                             Comprar
                                         </a>
                                     </div>
-                                    <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                                        <p>
-                                            or{' '}
-                                            <button
-                                                type="button"
-                                                onClick={onClose}
-                                                className="font-medium text-indigo-600 hover:text-indigo-500"
-                                            >
-                                                Continua comprando
-                                                <span aria-hidden="true"> &rarr;</span>
-                                            </button>
-                                        </p>
+                                    <p className="mt-3 text-center text-sm text-black">O{' '}</p>
+                                    <div className="mt-3 flex justify-center text-center text-sm text-gray-500">
+
+                                        <button
+                                            type="button"
+                                            onClick={onClose}
+                                            className="font-medium text-gray-200  hover:text-indigo-400"
+                                        >
+                                            Continua comprando
+                                            <span aria-hidden="true"> &rarr;</span>
+                                        </button>
+
                                     </div>
                                 </div>
                             </div>
